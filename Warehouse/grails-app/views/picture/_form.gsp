@@ -16,6 +16,5 @@
 		
 	</label>
 	<g:textField name="path" value="${pictureInstance?.path}"/>
-        <input type="file" name="picture" id="picture">
 </div>
 
