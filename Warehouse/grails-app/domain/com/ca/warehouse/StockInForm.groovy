@@ -6,16 +6,17 @@ import com.ca.people.Supplier
 class StockInForm extends Entity {
 
     Date inDate
+	
     Supplier supplier
 
-    Double fee
-
-    static hasMany = [items: StockInItem]
+	Warehouse warehouse
+	
+    static hasMany = [entries: StockInEntry]
 
     public Double getSubtotal() {
         Double subtotal = 0.0
 
-        for(StockInItem item: items)
+        for(StockInEntry item: entries)
             subtotal += item.quantity * item.singlePrice
 
         return subtotal
@@ -23,8 +24,8 @@ class StockInForm extends Entity {
 
     public Double getTax() {
         Double tax = 0.0
-        for(StockInItem item: items)
-            if(item.tax)
+        for(StockInEntry item: entries)
+            if(item.taxable)
                 tax += item.singlePrice * item.taxRate * item.quantity
 
         return tax
@@ -35,5 +36,10 @@ class StockInForm extends Entity {
     }
 
     static constraints = {
+		inDate nullable: false, blank: false
+		supplier nullable: true
+		warehouse nullable: true
+		
+		
     }
 }

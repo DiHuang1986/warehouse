@@ -35,7 +35,7 @@ grails.mime.types = [ // the first one is the default format
 //grails.urlmapping.cache.maxsize = 1000
 
 // What URL patterns should be processed by the resources plugin
-grails.resources.adhoc.patterns = ['/images/*', '/css/*', '/js/*', '/plugins/*']
+grails.resources.adhoc.patterns = ['/images/*', '/css/*', '/js/*', '/plugins/*', '/storage/*', '/resources/*']
 
 // Legacy setting for codec used to encode data with ${}
 grails.views.default.codec = "html"
@@ -112,4 +112,16 @@ log4j = {
            'org.springframework',
            'org.hibernate',
            'net.sf.ehcache.hibernate'
+}
+
+com {
+	ca {
+		config {
+			ROOT_PATH = ""
+			STORAGE_PATH = "${ROOT_PATH}/storage"
+			IMAGES_PATH = "${STORAGE_PATH}/images"
+			PRODUCT_IMAGES_PATH = "${IMAGES_PATH}/product"
+			RECEIPT_IMAGES_PATH = "${IMAGES_PATH}/receipt"
+		}
+	}
 }

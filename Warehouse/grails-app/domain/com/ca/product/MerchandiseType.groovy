@@ -1,17 +1,26 @@
 package com.ca.product
 
-import com.ca.common.Category
+import com.ca.common.Entity
+import com.ca.enums.MerchandiseCategory;
 
-class MerchandiseType {
+
+class MerchandiseType extends Entity {
 
     String name
     String description
 
-    Category category
-
+    MerchandiseCategory category
+	
     static hasMany = [feature: String]
 
 
     static constraints = {
+		name(nullable: false, blank: false)
+		description(nullable: true, blank: true)
+		category(nullable: false)
     }
+	
+	String toString() {
+		"${category}: ${name}"
+	}
 }

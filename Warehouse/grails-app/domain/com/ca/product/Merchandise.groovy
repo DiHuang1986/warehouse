@@ -47,7 +47,7 @@ abstract class Merchandise extends Entity {
      */
     MerchandiseType merchandiseType
 
-    static hasMany = [pictures: Picture]
+    static hasMany = [pictures: Picture, tags: Tag]
 
 //    Boolean taxable
 

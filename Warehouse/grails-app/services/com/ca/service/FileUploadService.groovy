@@ -1,32 +1,49 @@
 package com.ca.service
 
 import grails.transaction.Transactional
+import org.codehaus.groovy.grails.commons.GrailsApplication
 import org.codehaus.groovy.grails.web.context.ServletContextHolder
 import org.springframework.web.multipart.MultipartFile
 
+
 @Transactional
 class FileUploadService {
-
-    def String uploadFile(MultipartFile file, String name, String destinationDirectory) {
+	def grailsApplication
+	final static String ROOT = "/"
+	
+    private String uploadFile(MultipartFile file, String name, String destinationDirectory) {
         def servletContext = ServletContextHolder.servletContext
-        def storagePath = servletContext.getRealPath(destinationDirectory)
+        def root = servletContext.getRealPath(ROOT)
 
-        def storagePathDirectory = new File(storagePath)
-        if(!storagePathDirectory.exists()) {
+        def fileFolder = new File("${root}/${destinationDirectory}")
+		
+		def filePath = new File(fileFolder, name)
+		
+        if(!fileFolder.exists()) {
             println("Creating Directory")
-            if(storagePathDirectory.mkdir()) {
+            if(fileFolder.mkdir()) {
                 println("Success")
             } else {
                 println "false"
-            }
-
-            if(!file.isEmpty()) {
-                file.transferTo(new File("${storagePath}/${name}"))
-                println("Saved File: ${storagePath}/${name}")
-                return "${storagePath}/${name}"
-            } else {
-                return null
-            }
+            }    
         }
+		
+		if(!file.isEmpty()) {
+			file.transferTo(filePath)
+			println("Saved File: ${destinationDirectory}/${name}")
+			return "${destinationDirectory}/${name}"
+		} else {
+			return null
+		}
     }
+	
+	String uploadProductPicture(MultipartFile file, String name, String parentFolder) {
+		def prodcutPath = grailsApplication.config.com.ca.config.PRODUCT_IMAGES_PATH
+		def destinationDirectory = "${prodcutPath}/${parentFolder}"
+		return uploadFile(file, name, destinationDirectory)
+	}
+	String uploadReceiptPicture(MultipartFile file, String name, String parentFolder) {
+		def prodcutPath = grailsApplication.config.com.ca.config.RECEIPT_IMAGES_PATH
+		def destinationDirectory = "${RECEIPT_IMAGE_FOLDER}/${parentFolder}"
+	}
 }

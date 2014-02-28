@@ -1,6 +1,6 @@
 package com.ca.people
 
-import com.ca.common.Country
+import com.ca.enums.Country;
 
 class Address {
 

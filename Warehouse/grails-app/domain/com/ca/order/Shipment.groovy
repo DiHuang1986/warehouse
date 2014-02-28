@@ -1,6 +1,6 @@
 package com.ca.order
 
-import com.ca.common.ShippmentStatus
+import com.ca.enums.ShippmentStatus;
 import com.ca.people.Address
 
 class Shipment {
@@ -14,7 +14,10 @@ class Shipment {
 
     ShippmentStatus status
 
-    static constraints = {
+	
+	
+    static hasMany = [items: ShipmentItem]
+	static	constraints = {
        
     }
 }

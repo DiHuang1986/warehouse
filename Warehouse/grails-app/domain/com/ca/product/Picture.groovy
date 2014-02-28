@@ -3,14 +3,18 @@ package com.ca.product
 import com.ca.common.Entity
 
 class Picture extends Entity {
-    final String IMG_STORAGE_LOCATION = ""
-
 
     String name
+	
     String path
+	
+	String description
+	
+	
+	static hasMany= [tags: Tag] 
 
     static constraints = {
-        name blank: true, nullable: true
-        path blank: true, nullable: true
+        name blank: false, nullable: false, unique: true
+		path blank: true, nullable: true
     }
 }

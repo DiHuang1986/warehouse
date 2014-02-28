@@ -3,6 +3,7 @@ package com.ca.product
 class Bag extends Merchandise {
 
     String styleNo
+	
     String colorNo
 
     static constraints = {

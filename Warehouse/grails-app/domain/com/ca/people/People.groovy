@@ -1,7 +1,7 @@
 package com.ca.people
 
 import com.ca.common.Entity
-import com.ca.common.Gender
+import com.ca.enums.Gender;
 
 abstract class People extends Entity {
     String firstName
