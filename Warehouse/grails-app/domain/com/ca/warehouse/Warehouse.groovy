@@ -1,9 +1,8 @@
 package com.ca.warehouse
 
-import com.ca.common.Entity
-import com.ca.enums.Country;
+import com.ca.address.Country
 
-class Warehouse extends Entity {
+class Warehouse {
 
     String name
     
@@ -11,10 +10,14 @@ class Warehouse extends Entity {
     
 	String city
 
-	Boolean active
+	Boolean active = Boolean.TRUE
 	
     static hasMany = [entries: WarehouseEntry]
 
+	static mapping = {
+		entries cascade: "all-delete-orphan"
+	}
+	
     static constraints = {
 		name 	nullable: false, blank: false
 		country nullable: true

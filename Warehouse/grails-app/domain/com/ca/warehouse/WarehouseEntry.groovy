@@ -9,7 +9,7 @@ class WarehouseEntry {
     Merchandise merchandise
     
 	Integer quantity
-
+	
     static constraints = {
 		merchandise nullable: false
 		quantity min: 0

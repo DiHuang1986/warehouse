@@ -2,7 +2,7 @@ package com.ca.order
 
 import com.ca.product.Merchandise
 
-class MerchandiseEntry {
+class OrderEntry {
 
     Merchandise merchandise
 

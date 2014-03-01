@@ -1,8 +1,6 @@
 package com.ca.product
 
-import com.ca.common.Entity
-
-class Color extends Entity {
+class Color {
 
     String name
     String comment
@@ -11,6 +9,10 @@ class Color extends Entity {
     String colorCode
 
     static constraints = {
+		name		nullable: false, blank: false
+		colorCode	nullable: false, blank: false
+		description	nullable: true
+		comment		nullable: true
     }
 
     public String toString() {

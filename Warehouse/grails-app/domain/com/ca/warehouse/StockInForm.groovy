@@ -1,9 +1,8 @@
 package com.ca.warehouse
 
-import com.ca.common.Entity
 import com.ca.people.Supplier
 
-class StockInForm extends Entity {
+class StockInForm {
 
     Date inDate
 	
@@ -35,11 +34,13 @@ class StockInForm extends Entity {
         return getSubtotal() + getTax()
     }
 
+	static mapping = {
+		entries cascade: "all-delete-orphan"
+	}
+	
     static constraints = {
 		inDate nullable: false, blank: false
 		supplier nullable: true
-		warehouse nullable: true
-		
-		
+		warehouse nullable: true	
     }
 }

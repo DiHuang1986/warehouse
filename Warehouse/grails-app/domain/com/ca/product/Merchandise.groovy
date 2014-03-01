@@ -1,8 +1,6 @@
 package com.ca.product
 
-import com.ca.common.Entity
-
-abstract class Merchandise extends Entity {
+abstract class Merchandise {
 
     /**
      * common property for every merchandise
@@ -22,20 +20,17 @@ abstract class Merchandise extends Entity {
     /**
      * bar code for the merchandise
      */
-    String EANCode
+    Long barCode
 
     /**
      * size
      */
-    Double length
-    Double width
-    Double height
+    Double length, width, height
 
     /**
      * the weight of this product, pound base
      */
-    Integer pound
-    Integer ounce
+    Integer pound, ounce
 
     /**
      * furthermore description for this product
@@ -52,9 +47,24 @@ abstract class Merchandise extends Entity {
 //    Boolean taxable
 
     static constraints = {
-        name blank: false
-        description nullable: true, maxSize: 1000
-        comment nullable: true, maxSize: 1000
-        tagPrice min: 0.0D
+		// basic info
+        name blank: false, nullable: false
+        tagPrice nullable: false, min: 0.0d
+		
+		brand nullable: true
+		description nullable: true, maxSize: 1000
+		comment nullable: true, maxSize: 1000
+		barCode nullable: true
+		
+		// size
+		length nullable: true, min: 0d
+		width nullable: true, min: 0d
+		height nullable: true, min: 0d
+		
+		// weight
+		pound nullable: true, min: 0
+		ounce nullable: true, min: 0, max: 16
+			
+		merchandiseType nullable: true
     }
 }

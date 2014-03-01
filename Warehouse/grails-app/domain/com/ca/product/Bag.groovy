@@ -7,7 +7,8 @@ class Bag extends Merchandise {
     String colorNo
 
     static constraints = {
-        colorNo unique: 'styleNo'
+		styleNo	nullable: false
+        colorNo unique: 'styleNo', nullable: false, blank: true
     }
 
     @Override

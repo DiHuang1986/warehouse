@@ -1,22 +1,17 @@
 package com.ca.order
 
-import com.ca.common.Entity
 import com.ca.enums.OrderStatus;
 
-abstract class Order extends Entity{
-
-//    Address shippingAddress
-
-    
+abstract class Order {
 
     Date createdDate
 
     OrderStatus status
     
-    static hasMany = [items: MerchandiseEntry, shipments: Shipment]
+    static hasMany = [entries: OrderEntry, shipments: Shipment]
 
-	
     static constraints = {
-        createdDate blank: false
+        createdDate nullable: false
+		status nullable: false
     }
 }

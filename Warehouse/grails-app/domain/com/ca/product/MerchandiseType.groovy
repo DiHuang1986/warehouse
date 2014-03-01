@@ -1,10 +1,9 @@
 package com.ca.product
 
-import com.ca.common.Entity
 import com.ca.enums.MerchandiseCategory;
 
 
-class MerchandiseType extends Entity {
+class MerchandiseType {
 
     String name
     String description

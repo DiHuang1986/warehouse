@@ -1,8 +1,6 @@
 package com.ca.product
 
-import com.ca.common.Entity
-
-class Tag extends Entity {
+class Tag {
 	String name
     static constraints = {
 		name(blank: false, nullable: false)

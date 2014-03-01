@@ -1,8 +1,8 @@
 package com.ca.order
 
-import com.ca.people.Address
+import com.ca.address.Address;
 
-class CustomerOrder {
+class CustomerOrder extends Order {
 
     Address shippingAddress
 

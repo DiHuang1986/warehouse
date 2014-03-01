@@ -23,5 +23,9 @@ class StockService {
 		}
 	}
 	
-	def outStock(Warehouse warehouse, )
+	def outStock(Warehouse warehouse, StockOutForm outStock) {
+		for( StockOutEntry outEntry: outStock.entries ) {
+			
+		}
+	}
 }

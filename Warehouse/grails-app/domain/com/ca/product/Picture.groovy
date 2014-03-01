@@ -1,8 +1,7 @@
 package com.ca.product
 
-import com.ca.common.Entity
 
-class Picture extends Entity {
+class Picture {
 
     String name
 	

@@ -1,18 +1,19 @@
 package com.ca.product
 
-import com.ca.common.Entity
 
-class Brand extends Entity {
+class Brand {
 
-    String brandName
+    String name
     String description
     String comment
 
     static constraints = {
-        brandName blank: false
+        name 		blank: false
+		description 	nullable: true
+		comment 		nullable: true
     }
 
     public String toString() {
-        brandName
+        name
     }
 }

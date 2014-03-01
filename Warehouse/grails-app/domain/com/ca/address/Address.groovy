@@ -1,6 +1,5 @@
-package com.ca.people
+package com.ca.address
 
-import com.ca.enums.Country;
 
 class Address {
 
@@ -9,8 +8,8 @@ class Address {
     String addressLine2
     String city
     String state
-    String zip
-    Country country
+    String country
+	String zip
 
     String phoneNumber
 

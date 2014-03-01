@@ -1,7 +1,11 @@
 package com.ca.people
 
-class Customer extends People {
+import com.ca.order.CustomerOrder
 
+class Customer extends People {
+	
+	static hasMany = [orders: CustomerOrder]
+	
     static constraints = {
     }
 }
