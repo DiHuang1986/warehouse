@@ -5,4 +5,7 @@ class Tag {
     static constraints = {
 		name(blank: false, nullable: false)
     }
+    String toString() {
+        name
+    }
 }

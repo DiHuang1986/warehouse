@@ -5,23 +5,23 @@ import com.ca.address.Country
 class Warehouse {
 
     String name
-    
-	Country country
-    
-	String city
 
-	Boolean active = Boolean.TRUE
-	
+    Country country
+
+    String city
+
+    Boolean active = Boolean.TRUE
+
     static hasMany = [entries: WarehouseEntry]
 
-	static mapping = {
-		entries cascade: "all-delete-orphan"
-	}
-	
+    static mapping = {
+        entries cascade: "all-delete-orphan"
+    }
+
     static constraints = {
-		name 	nullable: false, blank: false
-		country nullable: true
-		city 	nullable: true
-		active 	nullable: true
+        name nullable: false, blank: false
+        country nullable: true
+        city nullable: true
+        active nullable: true
     }
 }

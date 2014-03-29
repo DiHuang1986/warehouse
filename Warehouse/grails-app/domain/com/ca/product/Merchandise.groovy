@@ -42,7 +42,10 @@ abstract class Merchandise {
      */
     MerchandiseType merchandiseType
 
-    static hasMany = [pictures: Picture, tags: Tag]
+    static hasMany = [
+            pictures: Picture,
+            tags: Tag
+    ]
 
 //    Boolean taxable
 

@@ -17,7 +17,8 @@
 <%--		<link rel="stylesheet" href="${resources(dir: 'resources', file: 'bootstrap/css/bootstrap.min.css')}" type="text/css"/>--%>
 <%--		<link rel="stylesheet" href="${resources(dir: 'resources', file: 'bootstrap/css/bootstrap-theme.min.css')}" type="text/css"/>--%>
 <%--		<link rel="javascript" href="${resources(dir: 'resources', file: 'bootstrap/js/bootstrap.min.js')}" type="text/javascript"/>--%>
-		
+        <r:require module="bootstrap"/>
+
 		<g:layoutHead/>
 		<g:javascript library="application"/>		
 		<r:layoutResources />

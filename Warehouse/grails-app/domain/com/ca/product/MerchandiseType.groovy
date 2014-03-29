@@ -10,7 +10,9 @@ class MerchandiseType {
 
     MerchandiseCategory category
 	
-    static hasMany = [feature: String]
+    static hasMany = [
+            feature: String
+    ]
 
 
     static constraints = {

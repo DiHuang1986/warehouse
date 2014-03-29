@@ -7,11 +7,11 @@ class WarehouseEntry {
     static belongsTo = [warehouse: Warehouse]
 
     Merchandise merchandise
-    
-	Integer quantity
-	
+
+    Integer quantity
+
     static constraints = {
-		merchandise nullable: false
-		quantity min: 0
+        merchandise nullable: false
+        quantity min: 0
     }
 }

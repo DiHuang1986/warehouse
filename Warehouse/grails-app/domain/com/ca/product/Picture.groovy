@@ -10,7 +10,9 @@ class Picture {
 	String description
 	
 	
-	static hasMany= [tags: Tag] 
+	static hasMany = [
+            tags: Tag
+    ]
 
     static constraints = {
         name blank: false, nullable: false, unique: true

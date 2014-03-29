@@ -13,6 +13,6 @@ class Bag extends Merchandise {
 
     @Override
     String toString() {
-        return "${styleNo}: ${colorNo}"
+        "${styleNo}: ${colorNo}"
     }
 }
