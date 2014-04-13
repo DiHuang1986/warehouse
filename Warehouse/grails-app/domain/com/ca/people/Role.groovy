@@ -8,5 +8,7 @@ class Role {
     static hasMany = [privilges: Privilege]
 
     static constraints = {
+        name nullable: false, blank: false
+        description nullable: true, blank: true
     }
 }
