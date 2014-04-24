@@ -24,4 +24,8 @@ class Warehouse {
         city nullable: true
         active nullable: true
     }
+
+    String toString() {
+        "${this.class.simpleName}: ${name} ${country? '-'+country.name: ""} "
+    }
 }

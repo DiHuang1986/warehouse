@@ -21,4 +21,10 @@ class StockInForm {
         supplier nullable: true
         warehouse nullable: true
     }
+
+    @Override
+    String toString() {
+        "${warehouse.name}-${supplier}-${inDate}"
+    }
+
 }

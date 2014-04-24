@@ -18,4 +18,8 @@ abstract class People {
 		lastName nullable: false, blank: false
 		gender nullable: false, blank: false
     }
+
+    String toString() {
+        "${lastName}, ${firstName}"
+    }
 }
